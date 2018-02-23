@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-6 offset-md-3 mt-5">
+          <div class="alert alert-success text-center" *ngIf="successDisplay">
+            {{successMessage}}
+          </div>
+          <div class="alert alert-danger text-center" *ngIf="errorDisplay">
+              {{errorMessage}}
+          </div>
+          <form #f='ngForm' (ngSubmit)="onRegister(f)" >
+            <div class="card">
+              <div class="card-header bg-primary text-white text-center">
+                <h2 class="card-title">Registration Form</h2>
+              </div>
+              <div class="card-body">
+                  <div class="form-group">
+                      <label for="">Name</label>
+                      <input type="text" class="form-control" #name='ngModel' name="name"
+                       [(ngModel)]="registerObj.name"
+                       required minlength="3" maxlength="10" placeholder="Name">
+                      <div *ngIf="name.invalid && name.touched">
+                        <div *ngIf="name?.errors.required" class="text-danger">Name field is required</div>
+                        <div *ngIf="name?.errors.minlength" class="text-danger">
+                          Name should be {{name?.errors.minlength.requiredLength}} minimum
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="">Username</label>
+                      <input type="text" class="form-control" name="username" #username="ngModel"
+                      [(ngModel)]="registerObj.username" required placeholder="Username">
+                      <div *ngIf="username.invalid && username.touched">
+                        <div *ngIf="username?.errors.required" class="text-danger">Username field is required</div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="">Email</label>
+                      <input type="email" class="form-control" name="email"
+                      #email="ngModel" [(ngModel)]="registerObj.email"
+                       required pattern="^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$" placeholder="Email">
+                       <div *ngIf="email.invalid && email.touched">
+                        <div *ngIf="email?.errors.required" class="text-danger">Email field is required</div>
+                        <div *ngIf="email?.errors.pattern" class="text-danger">Invalid Email Format</div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="">Password</label>
+                      <input type="password"  class="form-control" name="password" #password="ngModel"
+                       [(ngModel)]="registerObj.password" required  placeholder="Password">
+                       <div *ngIf="password.invalid && password.touched">
+                        <div *ngIf="password?.errors.required" class="text-danger">Password field is required</div>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary float-right pointer" [disabled]="f.invalid">Submit</button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+  </div>
+</div>
+

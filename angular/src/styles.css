@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~font-awesome/css/font-awesome.min.css";
+
+body{
+  padding-top: 3.5rem;
+}
+
+.fix-footer{
+  margin-bottom: 320px !important;
+}
+
+input.ng-invalid.ng-touched{
+  border: 2px solid red;
+}
+
+input.ng-valid.ng-touched{
+  border: 2px solid green;
+}
+
+.pointer{
+  cursor: pointer;
+}

@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-6 offset-md-3 mt-5">
+          <div class="alert alert-success text-center" *ngIf="successDisplay">
+              {{successMessage}}
+            </div>
+            <div class="alert alert-danger text-center" *ngIf="errorDisplay">
+                {{errorMessage}}
+            </div>
+            <div class="alert alert-success text-center" *ngIf="isRegistered">
+                {{message}}
+            </div>
+        <div class="card">
+          <div class="card-header text-center text-white bg-primary">
+           <h2 ><i class="fa fa-user-circle fa-2x"></i> Login</h2>
+          </div>
+          <div class="card-body">
+              <form #f='ngForm' (ngSubmit)="onLogin(f)" >
+                  <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" name="username"
+                    #username="ngModel" [(ngModel)]="loginObj.username" required  placeholder="Username">
+                    <div *ngIf="username.invalid && username.touched">
+                        <div *ngIf="username?.errors.required" class="text-danger">
+                          Username field is required
+                        </div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password"
+                    #password="ngModel" [(ngModel)]="loginObj.password" required placeholder="Password">
+
+                    <div *ngIf="password.invalid && password.touched">
+                        <div *ngIf="password?.errors.required" class="text-danger">
+                          Password field is required
+                        </div>
+                      </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary float-right" [disabled]="f.invalid">Submit</button>
+                </form>
+          </div>
+
+        </div>
+      </div>
+  </div>
+</div>
+<div class="fix-footer"></div>

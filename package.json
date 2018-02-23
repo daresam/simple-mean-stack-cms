@@ -1,0 +1,29 @@
+{
+  "name": "anatomy-of-angular",
+  "version": "1.0.0",
+  "description": "MEAN STACK",
+  "main": "app.js",
+  "scripts": {
+    "start": "Node App"
+  },
+  "dependencies": {
+    "express": "4.16.2",
+    "mongoose": "5.0.5",
+    "bcryptjs": "2.4.3",
+    "cors": "2.8.4",
+    "jsonwebtoken": "8.1.1",
+    "body-parser": "1.18.2",
+    "passport": "0.4.0",
+    "passport-jwt": "3.0.1"
+
+  },
+  "keywords": [
+    "MongoDB",
+    "Express",
+    "Angular",
+    "Node",
+    "Authentication"
+  ],
+  "author": "Dare Samuel",
+  "license": "ISC"
+}
