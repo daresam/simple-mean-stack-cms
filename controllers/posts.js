@@ -49,8 +49,7 @@ router.post('/', (req, res, next) => {
             if(err) {
                 res.json({success: false, message: 'Failed to add post'});
             }else {
-                res.json({success: true, message: 'Post added successfully', 
-                    post: post
+                res.json({success: true, message: 'Post added successfully'
                 });
             }
     

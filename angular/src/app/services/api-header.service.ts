@@ -7,8 +7,8 @@ export class ApiHeaderService {
   public url: string;
   public headers: any;
   constructor() {
-    // this.url = 'http://localhost:3000/';
-    this.url = '';
+    this.url = 'http://localhost:3000/';
+    // this.url = '';
     this.headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
