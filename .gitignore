@@ -8,8 +8,6 @@
 # dependencies
 /node_modules
 
-# Remove Angular
-/angular
 
 # IDEs and editors
 /.idea

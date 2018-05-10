@@ -4,9 +4,21 @@ if(process.env.NODE_ENV == 'production') {
     };
 }else {
     module.exports = {
-        database: 'mongodb://localhost:27017/meanauth',
+        database: 'mongodb://root:password@ds245548.mlab.com:45548/meanauth',
         secret: 'yoursecret'
     };
 }
+
+
+// if(process.env.NODE_ENV == 'production') {
+//     module.exports = {
+//         database: 'mongodb://root:password@ds245548.mlab.com:45548/meanauth',
+//     };
+// }else {
+//     module.exports = {
+//         database: 'mongodb://localhost:27017/meanauth',
+//         secret: 'yoursecret'
+//     };
+// }
 
 
